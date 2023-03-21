@@ -1,0 +1,10 @@
+name = input("이름 입력>> ")
+job = input("직업 입력>> ")
+addr = input("사는 곳>> ")
+info = input("특이 사항>> ")
+
+print("{:-^60}".format("결과"))
+print("이 름{:->50}".format(name))
+print("직 업{:->50}".format(job))
+print("사는 곳{:->50}".format(addr))
+print("특이 사항{:->50}".format(info))

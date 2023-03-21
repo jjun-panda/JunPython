@@ -21,6 +21,8 @@ elif score >= 70 :
     grade = 'C'
 elif score >= 60 :
     grade = 'D'
+else :
+    grade = 'F'
 
 # score의 1의 자리가 7보다크면 grade에 +를 붙이고 3보다 작으면 -를 붙인다.
 num = score % 10
