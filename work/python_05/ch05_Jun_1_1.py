@@ -1,9 +1,4 @@
 pList = [
-	{"name":"haha", "phone":"11", "addr":"서울"},
-	{"name":"haha", "phone":"12", "addr":"수원"},
-	{"name":"haha", "phone":"13", "addr":"부산"},
-	{"name":"haha", "phone":"14", "addr":"광주"},
-	{"name":"haha", "phone":"15", "addr":"경기"}
 ]
 
 while True:
