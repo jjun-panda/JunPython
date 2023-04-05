@@ -4,4 +4,4 @@ if len(word) < 3 :
 elif len(word) >= 10 :
     print("검색어가 너무 깁니다.")
 else :
-    print('입력받은 검색어는 '+word+'입니다.')
+    print("입력받은 검색어는 "+word+"입니다.")

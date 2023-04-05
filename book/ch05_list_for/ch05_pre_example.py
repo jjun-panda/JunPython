@@ -22,22 +22,22 @@ import random
 
 # set 구조를 이용한 로또번호 검색기
 # Step 02
-import random
+# import random
 
-lotto = set()
-print('type :', type(lotto))
+# lotto = set()
+# print('type :', type(lotto))
 
-lotto.add(1);
-lotto.add(1);
-lotto.add(2);
-lotto.add(2);
-lotto.add(2);
-lotto.add(3);
-lotto.add(3);
-print(len(lotto) )
+# lotto.add(1);
+# lotto.add(1);
+# lotto.add(2);
+# lotto.add(2);
+# lotto.add(2);
+# lotto.add(3);
+# lotto.add(3);
+# print(len(lotto) )
 
-for i in lotto :
-    print(i, end="    ")
+# for i in lotto :
+#     print(i, end="    ")
 
 
 
@@ -48,13 +48,13 @@ for i in lotto :
 
 # # set 구조를 이용한 로또번호 검색기
 # # Step 03
-# import random
+import random
 
-# lotto = set()
+lotto = set()
 
-# while len(lotto) < 6 :
-#     lotto.add(random.randint(1,45))
+while len(lotto) < 6 :
+    lotto.add(random.randint(1,45))
 
-# print("--- 로또번호 생성 ---")
-# for i in lotto :
-#     print(i, end="    ")
+print("--- 로또번호 생성 ---")
+for i in lotto :
+    print(i, end="\t")

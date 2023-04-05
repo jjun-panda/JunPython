@@ -10,6 +10,6 @@ lis.append(3.14)
 print(type(lis) )
 print(lis)
 #리스트에 없은 요소를 index() 함수로 검색하면 ValueError 발생
-#print(lis.index(1000))
+print(lis.index(100))
 # 리스트의 범위를 넘은 첨자를 사용 해도 IndexError 발생
-#print(lis[10])
+print(lis[3])
