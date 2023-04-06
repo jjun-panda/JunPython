@@ -22,7 +22,7 @@ while True:
 	elif no == 3 :
 		print("{:-^50}".format(" 검색기능 "))
 
-		search = input("어떤 것을 검색하시겠습니까?>>> ")
+		search = input("어떤 것을 검색하겠습니까?>>> ")
 		while(len(search) == 0) :
 			print("입력하지 않았네요!")
 			search = input("다시 입력해주세요>>> ")
