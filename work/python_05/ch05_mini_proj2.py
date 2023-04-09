@@ -79,7 +79,7 @@ def output_std() :
 	for i, p in enumerate(sList) :
 			print("{: >3}|{: ^20}|{: ^8}|{: ^8}|{: ^8}|{: ^8}|{: ^8}|{: ^8}|{: ^8}".format(p['seq'], p['name'], p['kor'], p['eng'], p['mat'], p['total'], p['avg'], p['grade'], p['rank']))
 	return True
-	
+
 
 # 검색
 def search_std() :
@@ -113,6 +113,7 @@ def search_std() :
 				print("{: >3}|{: ^20}|{: ^8}|{: ^8}|{: ^8}|{: ^8}|{: ^8}|{: ^8}|{: ^8}".format(p['seq'], p['name'], p['kor'], p['eng'], p['mat'], p['total'], p['avg'], p['grade'], p['rank']))
 	return True
 
+
 # 수정
 def modify_std() :
 	if output_std() :
@@ -136,6 +137,7 @@ def modify_std() :
 					print(">>잘못된 번호입니다.")
 				print(">>수정 완료했습니다.")
 
+
 # 삭제
 def delete_std() :
 	if output_std() :
@@ -148,7 +150,8 @@ def delete_std() :
 		#     print("삭제 완료했습니다.")
 		# else :
 		#     print("존재하지 않는 번호입니다.")
-		
+
+
 # 종료
 def end_std() :
 	sys.exit()
@@ -156,3 +159,6 @@ def end_std() :
 
 if __name__ == "__main__":
 	list_std()
+
+
+
