@@ -7,7 +7,7 @@ class Music :
     def play(self):
         print(f"{self.track}번 트랙 {self.singer}의 {self.title} 실행중입니다.")
 
-    def list(self):
+    def list(self): # 실시간 리스트 확인위해 추가
         return f"[{self.track}] {self.singer} | {self.title}"
 
 class MusicPlayer :
@@ -50,7 +50,7 @@ class MusicPlayer :
 m_play = MusicPlayer()
 while True:
     print("::Music Player::")
-    for music in m_play.musiclist : 
+    for music in m_play.musiclist : #실시간 리스트 확인용
         print(music.list())
     no = int(input("(1)추가 (2)제거 (3)전곡 실행 (4)종료 >> "))
     if no == 1:
