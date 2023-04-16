@@ -29,8 +29,8 @@ class MusicPlayer :
                 print("곡 추가 기능을 마칩니다.")
                 break
             singer = input("가수 입력>> ")
-            music = Music(track, title, singer)
-            self.musiclist.append(music)
+            music_A = Music(track, title, singer)
+            self.musiclist.append(music_A)
 
     # 제거
     def remove(self, idx):
@@ -43,15 +43,15 @@ class MusicPlayer :
 
     # 전곡 실행
     def play_all(self):
-        for music in self.musiclist : 
-            music.play()
+        for music_C in self.musiclist : 
+            music_C.play()
     
 
 m_play = MusicPlayer()
 while True:
     print("::Music Player::")
-    for music in m_play.musiclist : #실시간 리스트 확인용
-        print(music.list())
+    for music_B in m_play.musiclist : #실시간 리스트 확인용
+        print(music_B.list())
     no = int(input("(1)추가 (2)제거 (3)전곡 실행 (4)종료 >> "))
     if no == 1:
         m_play.input()
