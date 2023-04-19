@@ -1,4 +1,3 @@
-'''
 members = []
 
 while True :
@@ -27,7 +26,6 @@ while True :
         print('해당 사항 없습니다.')
 
 print("종료합니다!")
-'''
 from pprint import pprint
 
 '''

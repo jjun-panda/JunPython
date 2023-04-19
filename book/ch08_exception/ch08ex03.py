@@ -1,4 +1,4 @@
-
+# user = "jun"
 try:
     message = user + "님 안녕하세요^^"
     print(message)

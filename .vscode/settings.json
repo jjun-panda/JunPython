@@ -1,0 +1,3 @@
+{
+  "python.analysis.extraPaths": ["./book/ch12_webscrap"]
+}

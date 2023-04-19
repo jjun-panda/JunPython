@@ -1,8 +1,8 @@
 from turtle import Turtle
 
 t = Turtle()
-t.color("RED")
-t.pensize(5)
+t.color("#009681")
+t.pensize(5) # 선굵기
 t.shape("turtle")
 
 def moveTurtle() :
@@ -14,7 +14,7 @@ def moveTurtle() :
     t.forward(length)
 
 
-for i in range(5) :
+for i in range(5) : # 최대 5번까지 진행가능
     moveTurtle()
 
 input('Press any key to continue ...')

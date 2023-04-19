@@ -1,0 +1,8 @@
+root - 2023-04-18 19:36:33,845 - Exception 발생
+root - 2023-04-18 19:37:33,087 - ValueError 발생
+root - 2023-04-18 15:44:39,049 - ValueError 발생
+root - 2023-04-18 15:44:40,154 - ValueError 발생
+root - 2023-04-18 15:44:41,255 - ValueError 발생
+root - 2023-04-18 15:44:42,356 - ValueError 발생
+root - 2023-04-18 15:44:44,153 - ValueError 발생
+root - 2023-04-18 15:44:47,598 - ValueError 발생

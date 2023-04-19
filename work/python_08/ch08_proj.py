@@ -81,7 +81,10 @@ class WordGameApp:
 
 		user = 0 # 참가자 차례 순서대로 진행
 		while True:
+			print(user)
+			print(len(self.players))
 			player = user % len(self.players)
+			print(player)
 			last_word = self.word[-1]
 			game_user = self.players[player]
 			game_user.play_word()
