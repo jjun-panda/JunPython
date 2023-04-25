@@ -112,31 +112,11 @@ def deleteEvtHandler():
         messagebox.showinfo('경고', '찾는 정보가 없습니다!')
 
 
-# pickle 모듈을 불러온다.
-import pickle
-
-def backupEvtHandler():
-    print("파일로 백업 ...")
-    with open('data_list.pickle', 'wb') as f:
-        pickle.dump(data_list, f)
-
-
-
-def loadEvtHandler():
-    print("파일로 로드 ...")
-    global data_list
-    with open('data_list.pickle', 'rb') as f:
-        data_list = pickle.load(f)
-    refreshTreeview(data_list)
 
 create_table()
 
 win = Tk()
 win.geometry('%dx%d+%d+%d' %(800, 600, 5, 5))
-
-topFrame = Frame(win)
-topFrame.pack(side='top')
-topFrame.config(width=800, height=100, background="#eee")
 
 panedwindow=PanedWindow(relief="raised", bd=0)
 panedwindow.pack(expand=True)
@@ -148,6 +128,11 @@ leftFrame.config(width=200, height=400, background="#eee")
 rightFrame = Frame(win)
 rightFrame.pack(side='right')
 rightFrame.config(width=600, height=470, background="green")
+
+
+topFrame = Frame(win)
+topFrame.pack(side='top')
+topFrame.config(width=800, height=100, background="#eee")
 
 panedwindow.add(leftFrame)
 panedwindow.add(rightFrame)
@@ -187,26 +172,23 @@ btn_input = Button(panedwindow, text="입력", command=inputEvtHandler)
 btn_search = Button(panedwindow, text="검색", command=searchEvtHandler)
 btn_modify = Button(panedwindow, text="수정", command=modifyEvtHandler)
 btn_delete = Button(panedwindow, text="삭제", command=deleteEvtHandler)
-btn_backup = Button(panedwindow, text="파일백업", command=backupEvtHandler)
-btn_load = Button(panedwindow, text="파일로드", command=loadEvtHandler)
 
 panedwindow.add(btn_output)
 panedwindow.add(btn_input)
 panedwindow.add(btn_search)
 panedwindow.add(btn_modify)
 panedwindow.add(btn_delete)
-panedwindow.add(btn_backup)
-panedwindow.add(btn_load)
 
 
 # rightFrame에 목록 추가하기
 header_list = ['no', 'name', 'phone number', 'e-mail']
-"""data_list = [
-(1,'kim', '010-2222-1111', 'kim@comstudy21.or.kr'),
-(2,'lee', '010-2222-2222', 'lee@comstudy21.or.kr'),
-(3,'park', '010-2222-3333', 'park@comstudy21.or.kr'),
-(4,'kang', '010-2222-4444', 'kang@comstudy21.or.kr')
-]"""
+data_list = [
+    ("1", "웨어러블", "현대로템", 1200000, "icon1.png"),
+    ("2", "로봇암", "두산로보틱스", 1500000, "icon2.png"),
+    ("3", "산업용", "현대로보틱스", 2500000, "icon3.png"),
+    ("4", "청소용", "비죠아", 2000000, "icon4.png"),
+    ("5", "공간용", "지우개", 300000, "icon5.png")
+]
 
 data_list = select_all()
 

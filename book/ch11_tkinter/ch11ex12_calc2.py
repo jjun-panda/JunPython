@@ -2,7 +2,7 @@ from tkinter import Tk, Button, Entry, END
 
 opers = []
 nums = []
-numStr = '';
+numStr = ''
 
 def calc(target) :
     ch = target['text']

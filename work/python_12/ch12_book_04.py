@@ -1,50 +1,28 @@
 import requests
 from SearchList import getSearchList
-from Tools import replaceSRC
-
-import json
-
-#savePath = "C:\\Users\\KBJ\\Documents\\_Python_PythonExample\\_Python_lecture_prepare\\Python_BeautifulSoup_Nodejs\\node_work2\\public\\news\\"
-savePath = "news/"
+import pickle
 
 search_list = getSearchList("https://news.daum.net/", "ul.list_newsissue")
 div_list = search_list[0].find_all('strong', class_='tit_g')
-
-newsList = []
+imgList = []
 
 for i, element in enumerate(div_list):
-    newsObj = {}
-    newsLink = "https://news.daum.net"
-    newsUrl = newsLink + element.find("a")["href"]
-    newsTit = element.find("a").text.strip()
+    imgTags = getSearchList("https://news.daum.net" + element.find("a")["href"], "img.thumb_g")
 
-    imgTags = getSearchList(newsUrl, "div#articleBodyContents img")
-    newsContents = getSearchList(newsUrl, "div#articleBodyContents")[0]
-
-    srcList = []
-    for j, img in enumerate(imgTags):
+    images = []
+    for j, img in enumerate(imgTags) :
         src = img.get("src")
         response = requests.get(src[:src.index("?")])
-        assert response.status_code is 200
 
-        imgName = "tmp_img" + str(i) + str(j) + ".jpg"
-        srcList.append(imgName)
-        with open(savePath+imgName, "wb") as fp:
-            fp.write(response.content)
+        if response.status_code == 200:
+            ext = src.split(".")[-1]
+            imgUrl = f"newImg{i}{j}.{ext}"
+            images.append(f"./news/{imgUrl}")
 
-    newsContents = replaceSRC(str(newsContents), srcList)
-    contentsFile = "newsContent"+str(i)+".html"
-    with open(savePath+contentsFile, "w", encoding="utf8") as fp :
-        fp.write(newsContents)
+            with open(f"news/{imgUrl}", "wb") as fp :
+                fp.write(response.content)
 
-    newsObj['title'] = newsTit
-    newsObj['link'] = newsUrl
-    newsObj['images'] = srcList
-    #newsObj['contents'] = newsContents
-    newsObj['contentsFile'] = contentsFile
+    imgList.append(images)
 
-    newsList.append(newsObj);
-
-
-with open(savePath+"newsList.json", "w") as fp :
-    json.dump(newsList, fp)
+with open("news/imgList.txt", "wb") as fp :
+    pickle.dump(imgList, fp)

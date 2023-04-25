@@ -25,7 +25,7 @@ for i in range(1,6) :
         else :
             btns[i - 1][j].grid(row=i, column=j, padx=2, pady=2, sticky='wens')
 
-btns[5][0].grid(row=6, column=0, columnspan=2, sticky='wens', padx=2, pady=2)
+btns[5][0].grid(row=6, column=0, columnspan=2,  padx=2, pady=2, sticky='wens')
 btns[5][1].grid(row=6, column=2, padx=2, pady=2, sticky='wens')
 btns[5][2].grid(row=6, column=3, padx=2, pady=2, sticky='wens')
 

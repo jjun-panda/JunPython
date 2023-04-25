@@ -1,3 +1,3 @@
 {
-  "python.analysis.extraPaths": ["./book/ch12_webscrap"]
+  "python.analysis.extraPaths": ["./book/ch12_webscrap", "./book/ch13_mini_project"]
 }
