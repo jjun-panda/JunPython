@@ -11,8 +11,8 @@ def clear_list():
 def update_label(url, label, update_time):
     clear_list()
     if "yahoo" in url:
-        search_list = getSearchList(url, "div.sc-hzUIXc.jSTRnN")
-        seb_list = search_list[0].find_all("li", class_="sc-fHCHyC jhKFuK")
+        search_list = getSearchList(url, "div.box_etc")
+        seb_list = search_list[0].find_all("strong", class_="tit_thumb")
         news_list = [element.find("a") for element in seb_list]
     elif "daum" in url:
         search_list = getSearchList(url, "ul.list_newsissue")
@@ -42,7 +42,7 @@ def update_label(url, label, update_time):
     update_time.config(text=f"Last updated: {current_time}")
 
 def update_yahoo_jp_label():
-    update_label("https://news.yahoo.co.jp/topics", yahoo_jp_last_update, yahoo_jp_last_update)
+    update_label("https://news.daum.net/breakingnews/society", yahoo_jp_last_update, yahoo_jp_last_update)
 
 def update_daum_label():
     update_label("https://news.daum.net/", daum_last_update, daum_last_update)

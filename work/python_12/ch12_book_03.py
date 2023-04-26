@@ -64,7 +64,7 @@ for cnt in range(20):
     print(search_list)
 
     div_list = search_list[0].find_all('strong', class_='tit_thumb')
-    print(div_list)
+    # print(div_list)
 
     for i, element in enumerate(div_list):
         print(i, element.find('a').text.strip())

@@ -10,19 +10,19 @@ def clear_list():
 
 def update_label(url, label, update_time):
     clear_list()
-    if "daum_1" in url:
+    if "society" in url:
         search_list = getSearchList(url, "div.box_etc")
         seb_list = search_list[0].find_all('strong', class_='tit_thumb')
         news_list = [element.find("a") for element in seb_list]
-    elif "daum_2" in url:
+    elif "politics" in url:
         search_list = getSearchList(url, "div.box_etc")
         seb_list = search_list[0].find_all('strong', class_='tit_thumb')
         news_list = [element.find("a") for element in seb_list]
-    elif "daum_3" in url:
+    elif "economic" in url:
         search_list = getSearchList(url, "div.box_etc")
         seb_list = search_list[0].find_all('strong', class_='tit_thumb')
         news_list = [element.find("a") for element in seb_list]
-    elif "daum_4" in url:
+    elif "foreign" in url:
         search_list = getSearchList(url, "div.box_etc")
         seb_list = search_list[0].find_all('strong', class_='tit_thumb')
         news_list = [element.find("a") for element in seb_list]
@@ -73,29 +73,29 @@ frame = tk.Frame(canvas)
 canvas.create_window((0, 0), window=frame, anchor="nw")
 
 # 야휴재팬뉴스
-yahoo_img = PhotoImage(file="yahoo.png", master=mac, width=20, height=20)
-yahoo_jp_news_btn = tk.Button(mac, text="  다음뉴스(사회)", font=("Pretendard", 12), command=update_yahoo_jp_label, compound="left", image = yahoo_img, width=120, height=40, cursor="hand2")
+yahoo_img = PhotoImage(file="daum.png", master=mac, width=20, height=20)
+yahoo_jp_news_btn = tk.Button(mac, text="  사회", font=("Pretendard", 12), command=update_yahoo_jp_label, compound="left", image = yahoo_img, width=120, height=40, cursor="hand2")
 yahoo_jp_news_btn.pack(pady=5)
 yahoo_jp_last_update = tk.Label(mac, text="Last updated: ", font=("Pretendard", 10))
 yahoo_jp_last_update.pack()
 
 # 다음뉴스
 daum_img = PhotoImage(file="daum.png", master=mac, width=20, height=20)
-daum_news_btn = tk.Button(mac, text="  다음뉴스", font=("Pretendard", 12), command=update_daum_label,compound="left", image = daum_img, width=120, height=40, cursor="hand2")
+daum_news_btn = tk.Button(mac, text="  정치", font=("Pretendard", 12), command=update_daum_label,compound="left", image = daum_img, width=120, height=40, cursor="hand2")
 daum_news_btn.pack(pady=5, padx=20)
 daum_last_update = tk.Label(mac, text="Last updated: ", font=("Pretendard", 10))
 daum_last_update.pack()
 
 # 연합뉴스
-yonhap_img = PhotoImage(file="yonhap.png", master=mac, width=20, height=20)
-yonhap_news_btn = tk.Button(mac, text="  연합뉴스", font=("Pretendard", 12), command=update_yonhap_label, compound="left", image = yonhap_img, width=120, height=40, cursor="hand2")
+yonhap_img = PhotoImage(file="daum.png", master=mac, width=20, height=20)
+yonhap_news_btn = tk.Button(mac, text="  경제", font=("Pretendard", 12), command=update_yonhap_label, compound="left", image = yonhap_img, width=120, height=40, cursor="hand2")
 yonhap_news_btn.pack(pady=5)
 yonhap_last_update = tk.Label(mac, text="Last updated: ", font=("Pretendard", 10))
 yonhap_last_update.pack()
 
 # 한겨레 뉴스
-hani_img = PhotoImage(file="hani.png", master=mac, width=20, height=20)
-hani_news_btn = tk.Button(mac, text="  한겨레뉴스", font=("Pretendard", 12), command=update_hani_label, compound="left", image = hani_img, width=120, height=40, cursor="hand2")
+hani_img = PhotoImage(file="daum.png", master=mac, width=20, height=20)
+hani_news_btn = tk.Button(mac, text="  국제", font=("Pretendard", 12), command=update_hani_label, compound="left", image = hani_img, width=120, height=40, cursor="hand2")
 hani_news_btn.pack(pady=5)
 hani_last_update = tk.Label(mac, text="Last updated: ", font=("Pretendard", 10))
 hani_last_update.pack()
